@@ -9,6 +9,8 @@ on:
       - master
   workflow_dispatch:
 
+
+
 jobs:
   build:
     runs-on: windows-latest
@@ -23,6 +25,10 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+
+      - name: Create output directory
+        run: if (!(Test-Path myapp)) {mkdir ${{env.DOTNET_ROOT}}/myapp}
+
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
