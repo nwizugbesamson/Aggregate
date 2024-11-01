@@ -27,7 +27,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Create output directory
-        run: if (!(Test-Path myapp)) {mkdir ${{env.DOTNET_ROOT}}/myapp}
+        run: if (!(Test-Path ${{env.DOTNET_ROOT}}/myapp)) {mkdir ${{env.DOTNET_ROOT}}/myapp}
 
 
       - name: dotnet publish
