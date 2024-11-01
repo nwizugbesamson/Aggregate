@@ -1,2 +1,3 @@
-﻿@BaseUrl = http://127.0.0.1:5041
-GET {{BaseUrl}}/weatherforecast
+﻿@Aggregator.API_HostAddress = http://127.0.0.1:5041
+GET {{Aggregator.API_HostAddress}}/weatherforecast
+Accept: application/json
